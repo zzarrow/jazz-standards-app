@@ -1,0 +1,89 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="JazzChartApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    shell:SystemTray.IsVisible="True">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:RotateTransition Mode="In90Clockwise" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:RotateTransition Mode="In180Clockwise" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:RotateTransition Mode="Out180Counterclockwise" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:RotateTransition Mode="Out90Counterclockwise" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <StackPanel x:Name="HdrVertDivPanel" Grid.Column="2" Orientation="Horizontal">
+                <TextBlock x:Name="ApplicationTitle" Text="The Real Jazz Standards App" Style="{StaticResource PhoneTextNormalStyle}" Width="327" HorizontalAlignment="Left" />
+                <HyperlinkButton x:Name="AboutLink" NavigateUri="/AboutPage.xaml" Content="About" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Foreground="#FFFF8A1A" TargetName="" />
+            </StackPanel>
+            <TextBlock x:Name="PageTitle" Text="Select a chart" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ListBox Name="SongList" Margin="0,56,0,6">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Button Width="460" Height="80" Click="Button_Click" Opacity="1" Background="#630081FF">
+                            <Button.Content>
+                                <TextBlock Width="460" FontSize="26" Text="{Binding Name}" Height="50" />
+                            </Button.Content>
+                        </Button>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="-4,-22,0,0" Name="txtFilter" Text="" VerticalAlignment="Top" Width="460" TextChanged="txtFilter_TextChanged" Tap="txtFilter_Tap" />
+            <TextBlock Height="53" HorizontalAlignment="Center" Margin="124,141,120,0" Name="txtNotFound1" Text="No songs found" VerticalAlignment="Top" FontSize="30" Visibility="Collapsed" />
+            <TextBlock FontSize="20" Height="53" HorizontalAlignment="Center" Margin="-102,185,-100,0" Name="txtNotFound2" Text="Are we missing something important?" VerticalAlignment="Top" Width="658" TextAlignment="Center" Visibility="Collapsed" />
+            <TextBlock FontSize="20" Height="53" HorizontalAlignment="Center" Margin="-102,208,-100,0" Name="txtNotFound3" Text="Please let us know in the About section." TextAlignment="Center" VerticalAlignment="Top" Width="658" Visibility="Collapsed" />
+        </Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/The%20Real%20Jazz%20Standards%20App%20for%20Windows%20Phone;component/bg3.jpg" />
+        </Grid.Background>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

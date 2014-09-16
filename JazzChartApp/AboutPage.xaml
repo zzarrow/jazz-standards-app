@@ -1,0 +1,77 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="JazzChartApp.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True">
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:RotateTransition Mode="In90Clockwise" />
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:RotateTransition Mode="In180Clockwise" />
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:RotateTransition Mode="Out180Counterclockwise" />
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:RotateTransition Mode="Out90Counterclockwise" />
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="The Real Jazz Standards App" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="About" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock Height="123" HorizontalAlignment="Center" Margin="9,-22,15,0" Name="textBlock1" Text="Thank you for downloading The Real Jazz Standards App for Windows Phone!" VerticalAlignment="Top" TextAlignment="Center" TextWrapping="Wrap" Width="431" FontSize="32" />
+            <Rectangle Height="1" HorizontalAlignment="Center" Margin="18,127,14,0" Name="rectangle1" Stroke="White" StrokeThickness="1" VerticalAlignment="Top" Width="424" Fill="White" />
+            <TextBlock Height="53" HorizontalAlignment="Center" Margin="45,145,51,0" Name="textBlock2" Text="The Real Jazz Standards app was developed by Zach Zarrow." VerticalAlignment="Top" Width="360" TextWrapping="Wrap" TextAlignment="Center" />
+            <TextBlock Height="79" HorizontalAlignment="Left" Margin="15,338,0,0" Name="textBlock3" Text="Many of the charts in this app were extracted from The Vanilla Real Book, by Ralph Patt. " TextWrapping="Wrap" VerticalAlignment="Top" Width="435" />
+            <TextBlock Height="76" HorizontalAlignment="Left" Margin="15,524,0,0" Name="textBlock4" Text="This app, as well as the developer, have no affiliation with The Real Book or the Hal Leonard Corporation.  The original versions of all songs included are the intellectual property of their respective composers, publishers, and/or copyright holders." TextWrapping="Wrap" VerticalAlignment="Top" Width="435" FontSize="14" />
+            <Button Content="Back to Song List" Height="72" HorizontalAlignment="Left" Margin="51,453,0,0" Name="button1" VerticalAlignment="Top" Width="345" Click="button1_Click" />
+            <TextBlock Height="87" HorizontalAlignment="Left" Margin="12,207,0,0" Name="textBlock5" Text="Do you have feedback, comments, requests, or bug reports for this app?  We'd love to hear from you!  Please direct all input to" TextWrapping="Wrap" VerticalAlignment="Top" Width="427" />
+            <Button Content="Review This App" Height="72" HorizontalAlignment="Left" Margin="51,397,0,0" Name="button2" VerticalAlignment="Top" Width="345" Click="button2_Click" />
+            <HyperlinkButton Content="TheRealJazzStandardsApp@gmail.com" Height="30" HorizontalAlignment="Left" Margin="18,296,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="424" NavigateUri="mailto:TheRealJazzStandardsApp@gmail.com" FontSize="20" TargetName="_blank" />
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

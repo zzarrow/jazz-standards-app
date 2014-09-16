@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F6C433F6-6D25-42BE-99B4-9B5481FD387C}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JazzChartApp</RootNamespace>
+    <AssemblyName>The Real Jazz Standards App for Windows Phone</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>JazzChartApp.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>JazzChartApp.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SongItem.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewSong.xaml.cs">
+      <DependentUpon>ViewSong.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewSong.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="chart_files\A Night in Tunisia.gif" />
+    <EmbeddedResource Include="chart_files\After You%27ve Gone.gif" />
+    <EmbeddedResource Include="chart_files\Ain%27t Misbehavin.gif" />
+    <EmbeddedResource Include="chart_files\Air Mail Special.gif" />
+    <EmbeddedResource Include="chart_files\Airegin.gif" />
+    <EmbeddedResource Include="chart_files\Alexander%27s Ragtime Band.gif" />
+    <EmbeddedResource Include="chart_files\All Blues.gif" />
+    <EmbeddedResource Include="chart_files\All God%27s Chillun Got Rhythm.gif" />
+    <EmbeddedResource Include="chart_files\All of Me.gif" />
+    <EmbeddedResource Include="chart_files\All Of You.gif" />
+    <EmbeddedResource Include="chart_files\All the Things You Are.gif" />
+    <EmbeddedResource Include="chart_files\Almost Like Being In Love.gif" />
+    <EmbeddedResource Include="chart_files\Alone Together.gif" />
+    <EmbeddedResource Include="chart_files\Along Came Betty.gif" />
+    <EmbeddedResource Include="chart_files\Always.gif" />
+    <EmbeddedResource Include="chart_files\Am I Blue.gif" />
+    <EmbeddedResource Include="chart_files\Amazing Grace.gif" />
+    <EmbeddedResource Include="chart_files\Angel Eyes.gif" />
+    <EmbeddedResource Include="chart_files\Anything Goes.gif" />
+    <EmbeddedResource Include="chart_files\April In Paris.gif" />
+    <EmbeddedResource Include="chart_files\Aren%27t You Glad You%27re You.gif" />
+    <EmbeddedResource Include="chart_files\As Long As I Live.gif" />
+    <EmbeddedResource Include="chart_files\As Time Goes By.gif" />
+    <EmbeddedResource Include="chart_files\At Sundown.gif" />
+    <EmbeddedResource Include="chart_files\Autumn in New York.gif" />
+    <EmbeddedResource Include="chart_files\Autumn Leaves.gif" />
+    <EmbeddedResource Include="chart_files\Avalon.gif" />
+    <EmbeddedResource Include="chart_files\Azure.gif" />
+    <EmbeddedResource Include="chart_files\Basin Street Blues.gif" />
+    <EmbeddedResource Include="chart_files\Baubles, Bangles, and Beads.gif" />
+    <EmbeddedResource Include="chart_files\Beautiful Love.gif" />
+    <EmbeddedResource Include="chart_files\Bernie%27s Tune.gif" />
+    <EmbeddedResource Include="chart_files\Between the Devil and the Deep Blue Sea.gif" />
+    <EmbeddedResource Include="chart_files\Bewitched, Bothered, Bewildered.gif" />
+    <EmbeddedResource Include="chart_files\Bidin%27 my Time.gif" />
+    <EmbeddedResource Include="chart_files\Bill Bailey.gif" />
+    <EmbeddedResource Include="chart_files\Birth of the Blues.gif" />
+    <EmbeddedResource Include="chart_files\Black and Blue.gif" />
+    <EmbeddedResource Include="chart_files\Black Coffee.gif" />
+    <EmbeddedResource Include="chart_files\Black Orpheus.gif" />
+    <EmbeddedResource Include="chart_files\Blue Bossa.gif" />
+    <EmbeddedResource Include="chart_files\Blue Lou.gif" />
+    <EmbeddedResource Include="chart_files\Blue Monk.gif" />
+    <EmbeddedResource Include="chart_files\Blue Moon.gif" />
+    <EmbeddedResource Include="chart_files\Blue Room.gif" />
+    <EmbeddedResource Include="chart_files\Blue Skies.gif" />
+    <EmbeddedResource Include="chart_files\Bluesette.gif" />
+    <EmbeddedResource Include="chart_files\Body and Soul.gif" />
+    <EmbeddedResource Include="chart_files\Born To Be Blue.gif" />
+    <EmbeddedResource Include="chart_files\Broadway.gif" />
+    <EmbeddedResource Include="chart_files\But Beautiful.gif" />
+    <EmbeddedResource Include="chart_files\But Not For Me.gif" />
+    <EmbeddedResource Include="chart_files\By Myself.gif" />
+    <EmbeddedResource Include="chart_files\Bye Bye Blackbird.gif" />
+    <EmbeddedResource Include="chart_files\Bye Bye Blues.gif" />
+    <EmbeddedResource Include="chart_files\Cabin in the Sky.gif" />
+    <EmbeddedResource Include="chart_files\Can%27t Get Out of This Mood.gif" />
+    <EmbeddedResource Include="chart_files\Can%27t Help Lovin%27 That Man.gif" />
+    <EmbeddedResource Include="chart_files\Can%27t We Be Friends.gif" />
+    <EmbeddedResource Include="chart_files\Caravan.gif" />
+    <EmbeddedResource Include="chart_files\Cheek to Cheek.gif" />
+    <EmbeddedResource Include="chart_files\Chelsea Bridge.gif" />
+    <EmbeddedResource Include="chart_files\Cherokee.gif" />
+    <EmbeddedResource Include="chart_files\Chicago.gif" />
+    <EmbeddedResource Include="chart_files\Christmas Song.gif" />
+    <EmbeddedResource Include="chart_files\Come Rain or Come Shine.gif" />
+    <EmbeddedResource Include="chart_files\Comes Love.gif" />
+    <EmbeddedResource Include="chart_files\Confirmation.gif" />
+    <EmbeddedResource Include="chart_files\Cottage for Sale.gif" />
+    <EmbeddedResource Include="chart_files\Cottontail.gif" />
+    <EmbeddedResource Include="chart_files\Crazy Rhythm.gif" />
+    <EmbeddedResource Include="chart_files\Cry Me a River.gif" />
+    <EmbeddedResource Include="chart_files\Cute.gif" />
+    <EmbeddedResource Include="chart_files\Dancing In The Dark.gif" />
+    <EmbeddedResource Include="chart_files\Dancing on the Ceiling.gif" />
+    <EmbeddedResource Include="chart_files\Danny Boy.gif" />
+    <EmbeddedResource Include="chart_files\Darn That Dream.gif" />
+    <EmbeddedResource Include="chart_files\Day By Day.gif" />
+    <EmbeddedResource Include="chart_files\Day In, Day Out.gif" />
+    <EmbeddedResource Include="chart_files\Days of Wine and Roses.gif" />
+    <EmbeddedResource Include="chart_files\Dearly Beloved.gif" />
+    <EmbeddedResource Include="chart_files\Deed I Do.gif" />
+    <EmbeddedResource Include="chart_files\Desafinado.gif" />
+    <EmbeddedResource Include="chart_files\Django.gif" />
+    <EmbeddedResource Include="chart_files\Do Nothing %27Til You Hear From Me.gif" />
+    <EmbeddedResource Include="chart_files\Don%27t Blame Me.gif" />
+    <EmbeddedResource Include="chart_files\Don%27t Get Around Much Anymore.gif" />
+    <EmbeddedResource Include="chart_files\Don%27t Take Your Love From Me.gif" />
+    <EmbeddedResource Include="chart_files\Doxy.gif" />
+    <EmbeddedResource Include="chart_files\East of the Sun.gif" />
+    <EmbeddedResource Include="chart_files\Easy Living.gif" />
+    <EmbeddedResource Include="chart_files\Easy to Love.gif" />
+    <EmbeddedResource Include="chart_files\Embraceable You.gif" />
+    <EmbeddedResource Include="chart_files\Epistrophy.gif" />
+    <EmbeddedResource Include="chart_files\Every Time We Say Goodbye.gif" />
+    <EmbeddedResource Include="chart_files\Everything Happens to Me.gif" />
+    <EmbeddedResource Include="chart_files\Everything I%27ve Got Belongs to You.gif" />
+    <EmbeddedResource Include="chart_files\Exactly Like You.gif" />
+    <EmbeddedResource Include="chart_files\Falling In Love With You.gif" />
+    <EmbeddedResource Include="chart_files\Fascinating Rhythm.gif" />
+    <EmbeddedResource Include="chart_files\Fine and Dandy.gif" />
+    <EmbeddedResource Include="chart_files\Fine Romance.gif" />
+    <EmbeddedResource Include="chart_files\Fly Me to the Moon.gif" />
+    <EmbeddedResource Include="chart_files\Foggy Day.gif" />
+    <EmbeddedResource Include="chart_files\Fools Rush In.gif" />
+    <EmbeddedResource Include="chart_files\For All We Know.gif" />
+    <EmbeddedResource Include="chart_files\Four.gif" />
+    <EmbeddedResource Include="chart_files\Freddie Freeloader.gif" />
+    <EmbeddedResource Include="chart_files\From This Moment On.gif" />
+    <EmbeddedResource Include="chart_files\Gal in Calico.gif" />
+    <EmbeddedResource Include="chart_files\Gee Baby Ain%27t I Good to You.gif" />
+    <EmbeddedResource Include="chart_files\Georgia on my Mind.gif" />
+    <EmbeddedResource Include="chart_files\Get Happy.gif" />
+    <EmbeddedResource Include="chart_files\Get Out of Town.gif" />
+    <EmbeddedResource Include="chart_files\Ghost of a Chance.gif" />
+    <EmbeddedResource Include="chart_files\Girl From Ipanema.gif" />
+    <EmbeddedResource Include="chart_files\Give Me the Simple Life.gif" />
+    <EmbeddedResource Include="chart_files\Glad to be Unhappy.gif" />
+    <EmbeddedResource Include="chart_files\God Bless the Child.gif" />
+    <EmbeddedResource Include="chart_files\Gone with the Wind.gif" />
+    <EmbeddedResource Include="chart_files\Groovin%27 High.gif" />
+    <EmbeddedResource Include="chart_files\Hallelujah.gif" />
+    <EmbeddedResource Include="chart_files\Have You Met Miss Jones.gif" />
+    <EmbeddedResource Include="chart_files\Heat Wave.gif" />
+    <EmbeddedResource Include="chart_files\Here%27s That Rainy Day.gif" />
+    <EmbeddedResource Include="chart_files\Honeysuckle Rose.gif" />
+    <EmbeddedResource Include="chart_files\How About You.gif" />
+    <EmbeddedResource Include="chart_files\How Deep is the Ocean.gif" />
+    <EmbeddedResource Include="chart_files\How High the Moon.gif" />
+    <EmbeddedResource Include="chart_files\How Insensitive.gif" />
+    <EmbeddedResource Include="chart_files\How Long Has This Been Going On.gif" />
+    <EmbeddedResource Include="chart_files\I Can%27t Believe You%27re In Love With Me.gif" />
+    <EmbeddedResource Include="chart_files\I Can%27t Get Started.gif" />
+    <EmbeddedResource Include="chart_files\I Can%27t Give You Anything But Love.gif" />
+    <EmbeddedResource Include="chart_files\I Concentrate On You.gif" />
+    <EmbeddedResource Include="chart_files\I Could Write a Book.gif" />
+    <EmbeddedResource Include="chart_files\I Cover the Waterfront.gif" />
+    <EmbeddedResource Include="chart_files\I Didn%27t Know What Time It Was.gif" />
+    <EmbeddedResource Include="chart_files\I Don%27t Know Why.gif" />
+    <EmbeddedResource Include="chart_files\I Fall In Love Too Easily.gif" />
+    <EmbeddedResource Include="chart_files\I Found a New Baby.gif" />
+    <EmbeddedResource Include="chart_files\I Get a Kick Out of You.gif" />
+    <EmbeddedResource Include="chart_files\I Got It Bad.gif" />
+    <EmbeddedResource Include="chart_files\I Got Rhythm.gif" />
+    <EmbeddedResource Include="chart_files\I Hadn%27t Anyone Til You.gif" />
+    <EmbeddedResource Include="chart_files\I Hear a Rhapsody.gif" />
+    <EmbeddedResource Include="chart_files\I Hear Music.gif" />
+    <EmbeddedResource Include="chart_files\I Left My Heart in San Francisco.gif" />
+    <EmbeddedResource Include="chart_files\I Let a Song Go Out of My Heart.gif" />
+    <EmbeddedResource Include="chart_files\I Love Paris.gif" />
+    <EmbeddedResource Include="chart_files\I Love You.gif" />
+    <EmbeddedResource Include="chart_files\I May Be Wrong.gif" />
+    <EmbeddedResource Include="chart_files\I Never Knew.gif" />
+    <EmbeddedResource Include="chart_files\I Remember You.gif" />
+    <EmbeddedResource Include="chart_files\I Should Care.gif" />
+    <EmbeddedResource Include="chart_files\I Surrender Dear.gif" />
+    <EmbeddedResource Include="chart_files\I Thought About You.gif" />
+    <EmbeddedResource Include="chart_files\I Want To Be Happy.gif" />
+    <EmbeddedResource Include="chart_files\I Wish I Were In Love Again.gif" />
+    <EmbeddedResource Include="chart_files\I Won%27t Dance.gif" />
+    <EmbeddedResource Include="chart_files\I%27ll Be Around.gif" />
+    <EmbeddedResource Include="chart_files\I%27ll Be Seeing You.gif" />
+    <EmbeddedResource Include="chart_files\I%27ll Get By.gif" />
+    <EmbeddedResource Include="chart_files\I%27ll Remember April.gif" />
+    <EmbeddedResource Include="chart_files\I%27ll String Along With You.gif" />
+    <EmbeddedResource Include="chart_files\I%27ll Take Manhattan.gif" />
+    <EmbeddedResource Include="chart_files\I%27ll Take Romance.gif" />
+    <EmbeddedResource Include="chart_files\I%27m Beginning to See the Light.gif" />
+    <EmbeddedResource Include="chart_files\I%27m Confessing That I Love You.gif" />
+    <EmbeddedResource Include="chart_files\I%27m Getting Sentimental Over You.gif" />
+    <EmbeddedResource Include="chart_files\I%27m Glad There Is You.gif" />
+    <EmbeddedResource Include="chart_files\I%27m in the Mood for Love.gif" />
+    <EmbeddedResource Include="chart_files\I%27m Old Fashioned.gif" />
+    <EmbeddedResource Include="chart_files\I%27ve Got a Crush on You.gif" />
+    <EmbeddedResource Include="chart_files\I%27ve Got My Love to Keep Me Warm.gif" />
+    <EmbeddedResource Include="chart_files\I%27ve Got the World on a String.gif" />
+    <EmbeddedResource Include="chart_files\I%27ve Got You Under My Skin.gif" />
+    <EmbeddedResource Include="chart_files\I%27ve Grown Accustomed To Your Face.gif" />
+    <EmbeddedResource Include="chart_files\Idaho.gif" />
+    <EmbeddedResource Include="chart_files\If I Had you.gif" />
+    <EmbeddedResource Include="chart_files\If I Love Again.gif" />
+    <EmbeddedResource Include="chart_files\If I Should Lose You.gif" />
+    <EmbeddedResource Include="chart_files\If I Were a Bell.gif" />
+    <EmbeddedResource Include="chart_files\If There is Someone Lovlier Than You.gif" />
+    <EmbeddedResource Include="chart_files\If You Could See Me Now.gif" />
+    <EmbeddedResource Include="chart_files\Ill Wind.gif" />
+    <EmbeddedResource Include="chart_files\Imagination.gif" />
+    <EmbeddedResource Include="chart_files\In a Mellow Tone.gif" />
+    <EmbeddedResource Include="chart_files\In a Sentimental Mood.gif" />
+    <EmbeddedResource Include="chart_files\In My Solitude.gif" />
+    <EmbeddedResource Include="chart_files\In Your Own Sweet Way.gif" />
+    <EmbeddedResource Include="chart_files\Indian Summer.gif" />
+    <EmbeddedResource Include="chart_files\Indiana %28Back Home Again%29.gif" />
+    <EmbeddedResource Include="chart_files\Invitation.gif" />
+    <EmbeddedResource Include="chart_files\Isn%27t It Romantic.gif" />
+    <EmbeddedResource Include="chart_files\It Could Happen to You.gif" />
+    <EmbeddedResource Include="chart_files\It Don%27t Mean a Thing.gif" />
+    <EmbeddedResource Include="chart_files\It Had to be You.gif" />
+    <EmbeddedResource Include="chart_files\It Might as Well Be Spring.gif" />
+    <EmbeddedResource Include="chart_files\It Never Entered My Mind.gif" />
+    <EmbeddedResource Include="chart_files\It Was Just One of Those Things.gif" />
+    <EmbeddedResource Include="chart_files\It%27s All Right With Me.gif" />
+    <EmbeddedResource Include="chart_files\It%27s Only a Paper Moon.gif" />
+    <EmbeddedResource Include="chart_files\It%27s the Talk of the Town.gif" />
+    <EmbeddedResource Include="chart_files\It%27s You Or No One.gif" />
+    <EmbeddedResource Include="chart_files\Jeepers Creepers.gif" />
+    <EmbeddedResource Include="chart_files\Jordu.gif" />
+    <EmbeddedResource Include="chart_files\Joy Spring.gif" />
+    <EmbeddedResource Include="chart_files\Just Friends.gif" />
+    <EmbeddedResource Include="chart_files\Just in Time.gif" />
+    <EmbeddedResource Include="chart_files\Just Squeeze Me.gif" />
+    <EmbeddedResource Include="chart_files\Just You, Just Me.gif" />
+    <EmbeddedResource Include="chart_files\Lady Be Good.gif" />
+    <EmbeddedResource Include="chart_files\Ladybird.gif" />
+    <EmbeddedResource Include="chart_files\Laura.gif" />
+    <EmbeddedResource Include="chart_files\Lazy Bird.gif" />
+    <EmbeddedResource Include="chart_files\Let%27s Face the Music and Dance.gif" />
+    <EmbeddedResource Include="chart_files\Like Someone in Love.gif" />
+    <EmbeddedResource Include="chart_files\Lil%27 Darlin%27.gif" />
+    <EmbeddedResource Include="chart_files\Limehouse Blues.gif" />
+    <EmbeddedResource Include="chart_files\Little White Lies.gif" />
+    <EmbeddedResource Include="chart_files\Liza.gif" />
+    <EmbeddedResource Include="chart_files\Long Ago and Far Away.gif" />
+    <EmbeddedResource Include="chart_files\Look for the Silver Lining.gif" />
+    <EmbeddedResource Include="chart_files\Looking for a Boy.gif" />
+    <EmbeddedResource Include="chart_files\Love for Sale.gif" />
+    <EmbeddedResource Include="chart_files\Love Me or Leave Me.gif" />
+    <EmbeddedResource Include="chart_files\Love Walked In.gif" />
+    <EmbeddedResource Include="chart_files\Lover Come Back To Me.gif" />
+    <EmbeddedResource Include="chart_files\Lover Man.gif" />
+    <EmbeddedResource Include="chart_files\Lover.gif" />
+    <EmbeddedResource Include="chart_files\Lullaby in Rhythm.gif" />
+    <EmbeddedResource Include="chart_files\Lullaby of Birdland.gif" />
+    <EmbeddedResource Include="chart_files\Lullaby of Broadway.gif" />
+    <EmbeddedResource Include="chart_files\Lullaby of the Leaves.gif" />
+    <EmbeddedResource Include="chart_files\Making Whoopee.gif" />
+    <EmbeddedResource Include="chart_files\Mean to Me.gif" />
+    <EmbeddedResource Include="chart_files\Meditation.gif" />
+    <EmbeddedResource Include="chart_files\Memories of You.gif" />
+    <EmbeddedResource Include="chart_files\Misty.gif" />
+    <EmbeddedResource Include="chart_files\Mood Indigo.gif" />
+    <EmbeddedResource Include="chart_files\Moonglow.gif" />
+    <EmbeddedResource Include="chart_files\Moonlight in Vermont.gif" />
+    <EmbeddedResource Include="chart_files\More Than You Know.gif" />
+    <EmbeddedResource Include="chart_files\Mountain Greenery.gif" />
+    <EmbeddedResource Include="chart_files\My Blue Heaven.gif" />
+    <EmbeddedResource Include="chart_files\My Favorite Things.gif" />
+    <EmbeddedResource Include="chart_files\My Foolish Heart.gif" />
+    <EmbeddedResource Include="chart_files\My Funny Valentine.gif" />
+    <EmbeddedResource Include="chart_files\My Heart Belongs to Daddy.gif" />
+    <EmbeddedResource Include="chart_files\My Heart Stood Still.gif" />
+    <EmbeddedResource Include="chart_files\My Ideal.gif" />
+    <EmbeddedResource Include="chart_files\My Melancholy Baby.gif" />
+    <EmbeddedResource Include="chart_files\My Old Flame.gif" />
+    <EmbeddedResource Include="chart_files\My One and Only Love.gif" />
+    <EmbeddedResource Include="chart_files\My Romance.gif" />
+    <EmbeddedResource Include="chart_files\My Shining Hour.gif" />
+    <EmbeddedResource Include="chart_files\My Ship Has Sailed.gif" />
+    <EmbeddedResource Include="chart_files\My Silent Love.gif" />
+    <EmbeddedResource Include="chart_files\Nearness of You.gif" />
+    <EmbeddedResource Include="chart_files\Nice Work if You Can Get It.gif" />
+    <EmbeddedResource Include="chart_files\No Moon at All.gif" />
+    <EmbeddedResource Include="chart_files\Nobody Else But Me.gif" />
+    <EmbeddedResource Include="chart_files\Old Devil Moon.gif" />
+    <EmbeddedResource Include="chart_files\On a Clear Day.gif" />
+    <EmbeddedResource Include="chart_files\On a Slow Boat to China.gif" />
+    <EmbeddedResource Include="chart_files\On Green Dolphin Street.gif" />
+    <EmbeddedResource Include="chart_files\On the Street Where You Live.gif" />
+    <EmbeddedResource Include="chart_files\On the Sunny Side of the Street.gif" />
+    <EmbeddedResource Include="chart_files\Once in a While.gif" />
+    <EmbeddedResource Include="chart_files\One I Love Belongs to Somebody Else.gif" />
+    <EmbeddedResource Include="chart_files\One Note Samba.gif" />
+    <EmbeddedResource Include="chart_files\Our Day Will Come.gif" />
+    <EmbeddedResource Include="chart_files\Our Love is Here to Stay.gif" />
+    <EmbeddedResource Include="chart_files\Out of Nowhere.gif" />
+    <EmbeddedResource Include="chart_files\Out of this World.gif" />
+    <EmbeddedResource Include="chart_files\Over the Rainbow.gif" />
+    <EmbeddedResource Include="chart_files\Pennies From Heaven.gif" />
+    <EmbeddedResource Include="chart_files\People Will Say We%27re in Love.gif" />
+    <EmbeddedResource Include="chart_files\Perdido.gif" />
+    <EmbeddedResource Include="chart_files\Pick Yourself Up.gif" />
+    <EmbeddedResource Include="chart_files\Polkadots and Moonbeams.gif" />
+    <EmbeddedResource Include="chart_files\Poor Butterfly.gif" />
+    <EmbeddedResource Include="chart_files\Portrait of Jenny.gif" />
+    <EmbeddedResource Include="chart_files\Prelude to a Kiss.gif" />
+    <EmbeddedResource Include="chart_files\Quiet Nights and Quiet Stars %28Corcovado%29.gif" />
+    <EmbeddedResource Include="chart_files\Recordame.gif" />
+    <EmbeddedResource Include="chart_files\Rose Room.gif" />
+    <EmbeddedResource Include="chart_files\Rosetta.gif" />
+    <EmbeddedResource Include="chart_files\Round Midnight.gif" />
+    <EmbeddedResource Include="chart_files\Ruby My Dear.gif" />
+    <EmbeddedResource Include="chart_files\S%27posin%27.gif" />
+    <EmbeddedResource Include="chart_files\S%27wonderful.gif" />
+    <EmbeddedResource Include="chart_files\Samba de Orfeu.gif" />
+    <EmbeddedResource Include="chart_files\Satin Doll.gif" />
+    <EmbeddedResource Include="chart_files\Scrapple from the Apple.gif" />
+    <EmbeddedResource Include="chart_files\Secret Love.gif" />
+    <EmbeddedResource Include="chart_files\September in the Rain.gif" />
+    <EmbeddedResource Include="chart_files\September Song.gif" />
+    <EmbeddedResource Include="chart_files\Seven Come Eleven.gif" />
+    <EmbeddedResource Include="chart_files\Shadow of your Smile.gif" />
+    <EmbeddedResource Include="chart_files\She%27s Funny That Way.gif" />
+    <EmbeddedResource Include="chart_files\Shiny Stockings.gif" />
+    <EmbeddedResource Include="chart_files\Skylark.gif" />
+    <EmbeddedResource Include="chart_files\Smoke Gets in Your Eyes.gif" />
+    <EmbeddedResource Include="chart_files\So In Love.gif" />
+    <EmbeddedResource Include="chart_files\Softly as a Morning Sunrise.gif" />
+    <EmbeddedResource Include="chart_files\Solar.gif" />
+    <EmbeddedResource Include="chart_files\Somday My Prince Will Come.gif" />
+    <EmbeddedResource Include="chart_files\Somebody Loves Me.gif" />
+    <EmbeddedResource Include="chart_files\Someone to Watch Over Me.gif" />
+    <EmbeddedResource Include="chart_files\Sometimes I%27m Happy.gif" />
+    <EmbeddedResource Include="chart_files\Soon.gif" />
+    <EmbeddedResource Include="chart_files\Sophisticated Lady.gif" />
+    <EmbeddedResource Include="chart_files\Speak Low.gif" />
+    <EmbeddedResource Include="chart_files\Spring is Here.gif" />
+    <EmbeddedResource Include="chart_files\St. Thomas.gif" />
+    <EmbeddedResource Include="chart_files\Star Eyes.gif" />
+    <EmbeddedResource Include="chart_files\Stardust.gif" />
+    <EmbeddedResource Include="chart_files\Stars Fell on Alabama.gif" />
+    <EmbeddedResource Include="chart_files\Stella by Starlight.gif" />
+    <EmbeddedResource Include="chart_files\Stompin%27 at the Savoy.gif" />
+    <EmbeddedResource Include="chart_files\Stormy Weather.gif" />
+    <EmbeddedResource Include="chart_files\Street of Dreams.gif" />
+    <EmbeddedResource Include="chart_files\Strike up the Band.gif" />
+    <EmbeddedResource Include="chart_files\Sugar.gif" />
+    <EmbeddedResource Include="chart_files\Summertime.gif" />
+    <EmbeddedResource Include="chart_files\Sweet and Lovely.gif" />
+    <EmbeddedResource Include="chart_files\Sweet Georgia Brown.gif" />
+    <EmbeddedResource Include="chart_files\Sweet Lorraine.gif" />
+    <EmbeddedResource Include="chart_files\Sweethearts on Parade.gif" />
+    <EmbeddedResource Include="chart_files\Swingin%27 on a Star.gif" />
+    <EmbeddedResource Include="chart_files\Take Five.gif" />
+    <EmbeddedResource Include="chart_files\Take the A Train.gif" />
+    <EmbeddedResource Include="chart_files\Taking a Chance on Love.gif" />
+    <EmbeddedResource Include="chart_files\Tangerine.gif" />
+    <EmbeddedResource Include="chart_files\Tea for Two.gif" />
+    <EmbeddedResource Include="chart_files\Tenderly.gif" />
+    <EmbeddedResource Include="chart_files\That Old Feeling.gif" />
+    <EmbeddedResource Include="chart_files\The End of a Love Affair.gif" />
+    <EmbeddedResource Include="chart_files\The Folks Who Live on the Hill.gif" />
+    <EmbeddedResource Include="chart_files\The Lady in Red.gif" />
+    <EmbeddedResource Include="chart_files\The Lady is a Tramp.gif" />
+    <EmbeddedResource Include="chart_files\The Last Time I Saw Paris.gif" />
+    <EmbeddedResource Include="chart_files\The Love Nest.gif" />
+    <EmbeddedResource Include="chart_files\The Man I Love.gif" />
+    <EmbeddedResource Include="chart_files\The More I See You.gif" />
+    <EmbeddedResource Include="chart_files\The Song is You.gif" />
+    <EmbeddedResource Include="chart_files\The Touch of Your Lips.gif" />
+    <EmbeddedResource Include="chart_files\The Very Thought of You.gif" />
+    <EmbeddedResource Include="chart_files\The Way You Look Tonight.gif" />
+    <EmbeddedResource Include="chart_files\There Is No Greater Love.gif" />
+    <EmbeddedResource Include="chart_files\There Will Never Be Another You.gif" />
+    <EmbeddedResource Include="chart_files\There%27s a Small Hotel.gif" />
+    <EmbeddedResource Include="chart_files\These Foolish Things.gif" />
+    <EmbeddedResource Include="chart_files\They All Laughed.gif" />
+    <EmbeddedResource Include="chart_files\They Can%27t Take That Away From Me.gif" />
+    <EmbeddedResource Include="chart_files\Things Ain%27t What They Used To Be.gif" />
+    <EmbeddedResource Include="chart_files\This Can%27t Be Love.gif" />
+    <EmbeddedResource Include="chart_files\This Year%27s Kisses.gif" />
+    <EmbeddedResource Include="chart_files\Thou Swell.gif" />
+    <EmbeddedResource Include="chart_files\Three Little Words.gif" />
+    <EmbeddedResource Include="chart_files\Time After Time.gif" />
+    <EmbeddedResource Include="chart_files\Too Marvelous for Words.gif" />
+    <EmbeddedResource Include="chart_files\Try a Little Tenderness.gif" />
+    <EmbeddedResource Include="chart_files\Tune Up.gif" />
+    <EmbeddedResource Include="chart_files\Two Sleepy People.gif" />
+    <EmbeddedResource Include="chart_files\Undecided.gif" />
+    <EmbeddedResource Include="chart_files\Until the Real Thing Comes Along.gif" />
+    <EmbeddedResource Include="chart_files\Up a Lazy River.gif" />
+    <EmbeddedResource Include="chart_files\Wait %27Til You See Her.gif" />
+    <EmbeddedResource Include="chart_files\Wave.gif" />
+    <EmbeddedResource Include="chart_files\Well You Needn%27t.gif" />
+    <EmbeddedResource Include="chart_files\What a Difference a Day Made.gif" />
+    <EmbeddedResource Include="chart_files\What a Little Moonlight Can Do.gif" />
+    <EmbeddedResource Include="chart_files\What is There To Say.gif" />
+    <EmbeddedResource Include="chart_files\What Is This Thing Called Love.gif" />
+    <EmbeddedResource Include="chart_files\What%27ll I Do.gif" />
+    <EmbeddedResource Include="chart_files\What%27s New.gif" />
+    <EmbeddedResource Include="chart_files\When I Fall In Love.gif" />
+    <EmbeddedResource Include="chart_files\When Sunny Gets Blue.gif" />
+    <EmbeddedResource Include="chart_files\When the Saints Go Marching In.gif" />
+    <EmbeddedResource Include="chart_files\When You Wish Upon a Star.gif" />
+    <EmbeddedResource Include="chart_files\When Your Lover Has Gone.gif" />
+    <EmbeddedResource Include="chart_files\Where or When.gif" />
+    <EmbeddedResource Include="chart_files\Whiffenpoof Song.gif" />
+    <EmbeddedResource Include="chart_files\Whispering.gif" />
+    <EmbeddedResource Include="chart_files\White Christmas.gif" />
+    <EmbeddedResource Include="chart_files\Who Cares.gif" />
+    <EmbeddedResource Include="chart_files\Why Shouldn%27t I.gif" />
+    <EmbeddedResource Include="chart_files\Willow Weep for Me.gif" />
+    <EmbeddedResource Include="chart_files\With the Wind and the Rain in Your Hair.gif" />
+    <EmbeddedResource Include="chart_files\World is Waiting for a Sunrise.gif" />
+    <EmbeddedResource Include="chart_files\Wrap Your Troubles in Dreams.gif" />
+    <EmbeddedResource Include="chart_files\Yardbird Suite.gif" />
+    <EmbeddedResource Include="chart_files\Yesterday.gif" />
+    <EmbeddedResource Include="chart_files\Yesterdays.gif" />
+    <EmbeddedResource Include="chart_files\You and the Night and the Music.gif" />
+    <EmbeddedResource Include="chart_files\You Brought a New Kind of Love to Me.gif" />
+    <EmbeddedResource Include="chart_files\You Do Something To Me.gif" />
+    <EmbeddedResource Include="chart_files\You Don%27t Know What Love Is.gif" />
+    <EmbeddedResource Include="chart_files\You Go to My Head.gif" />
+    <EmbeddedResource Include="chart_files\You Say You Care.gif" />
+    <EmbeddedResource Include="chart_files\You Stepped Out of a Dream.gif" />
+    <EmbeddedResource Include="chart_files\You Took Advantage of Me.gif" />
+    <EmbeddedResource Include="chart_files\You%27d Be So Nice to Come Home To.gif" />
+    <EmbeddedResource Include="chart_files\Yours is My Heart Alone.gif" />
+    <EmbeddedResource Include="chart_files\Zing Went the Strings.gif" />
+    <Resource Include="bg1.jpg" />
+    <Resource Include="bg2.jpg" />
+    <Resource Include="bg4.jpg" />
+    <Resource Include="bg3.jpg" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>
